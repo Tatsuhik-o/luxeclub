@@ -1,0 +1,20 @@
+.hero {
+  width: 100%;
+  position: relative;
+  height: calc(100vh - 190px);
+  background: url("/img/hero/panel.webp");
+  background-position: center center;
+  background-size: cover;
+}
+.main_panel {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background-color: #f3ebe5;
+}

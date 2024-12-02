@@ -1,0 +1,109 @@
+.contact {
+  width: 100%;
+  height: 100%;
+}
+.contact_hero {
+  width: 100%;
+  height: 40vh;
+  background: url("/img/contact_page/contact_bg.webp");
+  background-position: center center;
+  background-size: cover;
+}
+.contact_main_section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: url("/img/contact_page/contact_main_bg.webp");
+  background-size: cover;
+  background-position: bottom center;
+}
+.main_contact {
+  position: absolute;
+  top: -75px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background-color: white;
+  padding: 4rem 2rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.form_title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #955c31;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.names,
+.special_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0rem;
+  & > * {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.15rem;
+    font-weight: 400;
+    font-family: "Roboto";
+  }
+  & input {
+    padding: 0.8rem;
+    border: 1px solid #8d9fa9;
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: "Roboto";
+  }
+  & label {
+    font-style: italic;
+    color: #0e3242;
+  }
+}
+.message {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0rem;
+  width: 100%;
+  gap: 10px;
+  margin-bottom: 20px;
+  & label {
+    font-style: italic;
+    color: #0e3242;
+    font-size: 1.15rem;
+    font-weight: 400;
+    font-family: "Roboto";
+  }
+  & textarea {
+    padding: 0.8rem;
+    border: 1px solid #8d9fa9;
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: "Roboto";
+    min-width: 100%;
+    min-height: 150px;
+  }
+}
+.send_btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 1024px) {
+  .main_contact {
+    width: 95%;
+  }
+  .names,
+  .special_info {
+    flex-direction: column;
+    gap: 10px;
+    & > * {
+      width: 100%;
+    }
+  }
+}

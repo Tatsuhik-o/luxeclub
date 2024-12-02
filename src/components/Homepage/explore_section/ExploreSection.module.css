@@ -1,0 +1,38 @@
+.explore_section {
+  width: 100vw;
+  padding: 2rem 8rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+.space_bar {
+  margin: 3rem;
+  margin-left: 8rem;
+}
+.title_card {
+  margin: 3rem auto;
+  width: fit-content;
+  font-size: 2.1rem;
+  text-transform: capitalize;
+  font-style: italic;
+  color: #091e31;
+  text-decoration: underline;
+}
+@media only screen and (max-width: 1100px) {
+  .space_bar {
+    margin-left: 2rem;
+  }
+  .title_card {
+    font-size: 1.3rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .explore_section {
+    padding: 0;
+  }
+  .title_card {
+    font-size: 0.8rem;
+  }
+}

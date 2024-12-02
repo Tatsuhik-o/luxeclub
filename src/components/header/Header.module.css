@@ -1,0 +1,69 @@
+.header {
+  height: 90px;
+  padding: 0 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  position: relative;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+  & img {
+    height: 100%;
+    width: 100%;
+  }
+}
+.nav_bar {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  & a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0e3242;
+    padding: 20px 25px;
+    &:hover {
+      color: #e5b555;
+    }
+  }
+}
+.expand_icon {
+  font-size: 1.5rem;
+}
+.mobile_view {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  height: 100vh;
+  width: 250px;
+  background-color: white;
+  padding: 30px 15px;
+  transition: transform 0.2s ease-in-out;
+  border-bottom-left-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: nowrap;
+  z-index: 2;
+  & a {
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0e3242;
+    padding: 20px 25px;
+    &:hover {
+      color: #e5b555;
+    }
+  }
+}
+:global(.active) {
+  color: #e5b555 !important;
+}
