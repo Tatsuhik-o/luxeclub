@@ -19,7 +19,7 @@ export default function BookingCard({ data }) {
       <div className={styles.duration}>{data.duration} Days</div>
       <div className={styles.budget_and_book}>
         <p>
-          Price: <span>{data.budget}$</span>
+          Price: <span>{data.price}$</span>
         </p>
         {
           <button

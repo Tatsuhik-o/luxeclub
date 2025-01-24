@@ -13,18 +13,20 @@ export default function Tracking({ expanded, setExpanded }) {
       return;
     }
     setIsLoading(true);
-    fetch("/booking_details_fake.json")
+    fetch(`http://localhost:3000/get_ticket/${bookingTicket}`)
       .then((res) => res.json())
-      .then((data) => data.filter((booking) => booking.id === bookingTicket))
-      .then((booking) => {
-        const delay = setTimeout(() => {
+      .then((data) => {
+        const bit_timeout = setTimeout(() => {
           setIsLoading(false);
-          setBookingInformation(booking[0]);
+          setBookingInformation(data[0]);
           setBookingTicket("");
-        }, 1000);
+        }, 500);
         return () => {
-          clearTimeout(delay);
+          clearTimeout(bit_timeout);
         };
+      })
+      .catch((err) => {
+        console.log(err);
       });
   }
   return (

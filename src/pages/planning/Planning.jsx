@@ -78,21 +78,16 @@ export default function Planning({ expanded, setExpanded }) {
 
   async function trimResults() {
     dispatch({ type: "search_results" });
-    const response = await fetch("/randomData.json");
-    const randomData = await response.json();
     setLoading(true);
-    setTripResults(
-      randomData.filter((data) => {
-        return (
-          data.budget >= Number(tripInfo.minPrice) &&
-          data.budget <= Number(tripInfo.maxPrice) &&
-          data.duration >= tripInfo.duration &&
-          data.departure === tripInfo.departure &&
-          data.destination === tripInfo.destination &&
-          data.type === tripInfo.accomodation
-        );
+    fetch(
+      `http://localhost:3000/check_rooms?min_price=${tripInfo.minPrice}&max_price=${tripInfo.maxPrice}&destination=${tripInfo.destination}&duration=${tripInfo.duration}&type=${tripInfo.accomodation}`
+    )
+      .then((res) => {
+        return res.json();
       })
-    );
+      .then((data) => {
+        setTripResults(data);
+      });
   }
 
   useEffect(() => {
