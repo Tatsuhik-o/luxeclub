@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import styles from "./BookingCard.module.css";
 import { faLocationPin } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
 export default function BookingCard({ data }) {
   const [showBook, setShowBook] = useState(false);
-
+  const navigate = useNavigate();
   return (
     <div
       className={styles.booking_card}
       onMouseEnter={() => setShowBook(true)}
       onMouseLeave={() => setShowBook(false)}
+      onClick={() => navigate(`/booking/${data.id}`)}
     >
       <img src={data.url} alt={data.id} loading="lazy" />
       <div className={styles.location}>

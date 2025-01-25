@@ -6,6 +6,7 @@ import Tracking from "./pages/tracking/Tracking";
 import Planning from "./pages/planning/Planning";
 import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
+import BookingConfirmation from "./pages/booking/BookingConfirmation";
 import Not_Found from "./pages/404/NotFound";
 
 function App() {
@@ -50,6 +51,15 @@ function App() {
         <Route
           path="*"
           element={<Not_Found expanded={expanded} setExpanded={setExpanded} />}
+        />
+        <Route
+          path="/booking/:booking_id"
+          element={
+            <BookingConfirmation
+              expanded={expanded}
+              setExpanded={setExpanded}
+            />
+          }
         />
       </Routes>
     </BrowserRouter>
