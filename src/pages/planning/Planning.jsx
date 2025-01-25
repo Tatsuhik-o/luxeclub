@@ -1,11 +1,12 @@
 import React, { useEffect, useReducer, useState } from "react";
+import { lazy } from "react";
 import styles from "./Planning.module.css";
 import Header from "../../components/header/Header";
 import CustomButton from "../../components/ui/CustomButton";
-import CityCard from "../../components/city_card/CityCard";
-import TeamCard from "../../components/team_card/TeamCard";
 import ExploreSection from "../../components/Homepage/explore_section/ExploreSection";
-import BookingCard from "../../components/booking_card/BookingCard";
+const BookingCard = lazy(() =>
+  import("../../components/booking_card/BookingCard")
+);
 import Footer from "../../components/footer/Footer";
 const intialSteps = {
   step: 0,

@@ -4,13 +4,14 @@ import { faLocationPin } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function BookingCard({ data }) {
   const [showBook, setShowBook] = useState(false);
+
   return (
     <div
       className={styles.booking_card}
       onMouseEnter={() => setShowBook(true)}
       onMouseLeave={() => setShowBook(false)}
     >
-      <img src="/img/planning_page/booking_placeholder.png" alt="" />
+      <img src={data.url} alt={data.id} loading="lazy" />
       <div className={styles.location}>
         <FontAwesomeIcon icon={faLocationPin} color="#DFA42E" />
         <p>{data.destination}</p>
@@ -19,7 +20,7 @@ export default function BookingCard({ data }) {
       <div className={styles.duration}>{data.duration} Days</div>
       <div className={styles.budget_and_book}>
         <p>
-          Price: <span>{data.price}$</span>
+          Price: <span>{Math.round(data.price / data.duration)}$ / night</span>
         </p>
         {
           <button

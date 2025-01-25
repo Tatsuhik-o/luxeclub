@@ -10,6 +10,7 @@
   transition: border 0.3s ease-in-out;
   & img {
     width: 100%;
+    aspect-ratio: 4/3;
   }
   &:hover {
     border: 2px solid #a78c78;

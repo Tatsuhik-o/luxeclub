@@ -74,7 +74,8 @@ export default function Tracking({ expanded, setExpanded }) {
                   </p>
                   <img
                     src="/img/tracking_page/booking_ticket_temp.png"
-                    alt=""
+                    alt="booking placeholder"
+                    loading="lazy"
                   />
                 </div>
                 <div className={styles.ticket_marker_two}></div>
