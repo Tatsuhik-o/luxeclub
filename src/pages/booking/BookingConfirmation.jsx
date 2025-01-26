@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useState } from "react";
 import styles from "./BookingConfirmation.module.css";
 import { useParams } from "react-router-dom";
@@ -14,13 +14,15 @@ export default function BookingConfirmation({ expanded, setExpanded }) {
   const { booking_id } = useParams();
   const [bookingInformation, setBookingInformation] = useState({});
 
-  (async () => {
-    const response = await fetch(
-      `http://localhost:3000/get_booking/${booking_id}`
-    );
-    const data = await response.json();
-    setBookingInformation(data[0]);
-  })();
+  useEffect(() => {
+    (async () => {
+      const response = await fetch(
+        `https://luxeclub.duckdns.org/get_booking/${booking_id}`
+      );
+      const data = await response.json();
+      setBookingInformation(data[0]);
+    })();
+  }, []);
 
   return (
     <div className={styles.booking_confirmation}>

@@ -18,7 +18,7 @@ export default function Tracking({ expanded, setExpanded }) {
       return;
     }
     setIsLoading(true);
-    fetch(`http://localhost:3000/get_ticket/${bookingTicket}`)
+    fetch(`https://luxeclub.duckdns.org/get_ticket/${bookingTicket}`)
       .then((res) => res.json())
       .then((data) => {
         const bit_timeout = setTimeout(() => {

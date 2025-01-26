@@ -5,7 +5,7 @@ import mysql from "mysql2";
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: "*" }));
 
 dotenv.config();
 
@@ -30,12 +30,14 @@ app.get("/get_ticket/:booking_id", (req, res) => {
 
 app.get("/get_booking/:booking_id", (req, res) => {
   const { booking_id } = req.params;
+  console.log(booking_id);
   const query = "SELECT * FROM rooms WHERE id = ?";
   dbconnection.query(query, [booking_id], (err, result) => {
     if (err) {
       console.log(err);
       res.status(500).json({ message: "Internal server error" });
     }
+    console.log(result);
     res.status(200).json(result);
   });
 });
@@ -97,6 +99,6 @@ app.get("/check_rooms", (req, res) => {
   );
 });
 
-app.listen(3000, () => {
+app.listen(3000, "0.0.0.0", () => {
   console.log("Server is running on port 3000");
 });

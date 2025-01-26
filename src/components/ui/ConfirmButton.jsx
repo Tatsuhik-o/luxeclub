@@ -34,7 +34,7 @@ export default function CustomButton({
       body: JSON.stringify({ booking_id }),
     };
     const response = await fetch(
-      "http://localhost:3000/confirm_booking",
+      "https://luxeclub.duckdns.org/confirm_booking",
       options
     );
     const data = await response.json();
