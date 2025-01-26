@@ -4,6 +4,11 @@ import Header from "../../components/header/Header";
 import CustomButton from "../../components/ui/CustomButton";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import Footer from "../../components/footer/Footer";
+
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 export default function Tracking({ expanded, setExpanded }) {
   const [bookingTicket, setBookingTicket] = useState("");
   const [bookingInformation, setBookingInformation] = useState(null);
@@ -85,7 +90,7 @@ export default function Tracking({ expanded, setExpanded }) {
                 <div className={styles.table}>
                   <div className={styles.upper_ticket}>
                     <h2>{bookingInformation.destination}</h2>
-                    <h2>{bookingInformation.type}</h2>
+                    <h2>{capitalize(bookingInformation.type || "")}</h2>
                   </div>
                   <div className={styles.lower_ticket}>
                     <div className={styles.row}>
@@ -110,7 +115,7 @@ export default function Tracking({ expanded, setExpanded }) {
                     </div>
                     <div className={styles.row}>
                       <h2>Accomodation Type</h2>
-                      <h3>{bookingInformation.type}</h3>
+                      <h3>{capitalize(bookingInformation.type || "")}</h3>
                     </div>
                     <div className={styles.row}>
                       <h2>Airline Preference</h2>
