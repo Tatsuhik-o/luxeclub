@@ -44,11 +44,13 @@ export default function BookingConfirmation({ expanded, setExpanded }) {
                 team ensures every detail is perfect.
                 <br /> An Unforgettable Experience
               </p>
-              <img
-                src={bookingInformation.url}
-                alt="booking placeholder"
-                loading="lazy"
-              />
+              <div className={styles.image_holder}>
+                <img
+                  src={bookingInformation.url}
+                  alt="booking placeholder"
+                  loading="lazy"
+                />
+              </div>
             </div>
             <div className={styles.ticket_marker_two}></div>
           </div>

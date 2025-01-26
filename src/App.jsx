@@ -37,6 +37,10 @@ function App() {
           element={<Tracking expanded={expanded} setExpanded={setExpanded} />}
         />
         <Route
+          path="/tracking/:id"
+          element={<Tracking expanded={expanded} setExpanded={setExpanded} />}
+        />
+        <Route
           path="/planning"
           element={<Planning expanded={expanded} setExpanded={setExpanded} />}
         />

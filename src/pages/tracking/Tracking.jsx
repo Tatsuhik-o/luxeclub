@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Tracking.module.css";
+import { useParams } from "react-router-dom";
 import Header from "../../components/header/Header";
 import CustomButton from "../../components/ui/CustomButton";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
@@ -10,7 +11,7 @@ function capitalize(str) {
 }
 
 export default function Tracking({ expanded, setExpanded }) {
-  const [bookingTicket, setBookingTicket] = useState("");
+  const [bookingTicket, setBookingTicket] = useState(useParams().id || "");
   const [bookingInformation, setBookingInformation] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   function ticketSubmitted() {

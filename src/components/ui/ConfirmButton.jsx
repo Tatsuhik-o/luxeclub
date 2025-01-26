@@ -39,7 +39,7 @@ export default function CustomButton({
     );
     const data = await response.json();
     if (data) {
-      navigate("/tracking");
+      navigate("/tracking/" + booking_id);
     }
   };
   const cutsomStyle = {
