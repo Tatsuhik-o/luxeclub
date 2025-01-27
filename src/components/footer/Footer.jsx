@@ -30,8 +30,8 @@ export default function Footer({ expanded }) {
           </p>
         </div>
         <p className={styles.copyright_text}>
-          <strong className={styles.symbol}>©️</strong>Copyrights 2023. All
-          rights reserved to LuxeClub
+          <strong className={styles.symbol}>©️</strong>Copyrights{" "}
+          {new Date().getFullYear()}. All rights reserved to LuxeClub
         </p>
       </div>
     </div>

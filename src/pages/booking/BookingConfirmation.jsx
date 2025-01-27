@@ -17,7 +17,7 @@ export default function BookingConfirmation({ expanded, setExpanded }) {
   useEffect(() => {
     (async () => {
       const response = await fetch(
-        `http://localhost:3000/get_booking/${booking_id}`
+        `https://luxeclub.duckdns.org/get_booking/${booking_id}`
       );
       const data = await response.json();
       setBookingInformation(data[0]);
