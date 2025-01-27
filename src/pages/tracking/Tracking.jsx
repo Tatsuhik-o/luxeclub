@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Tracking.module.css";
 import { useParams } from "react-router-dom";
 import Header from "../../components/header/Header";
@@ -14,12 +14,14 @@ export default function Tracking({ expanded, setExpanded }) {
   const [bookingTicket, setBookingTicket] = useState(useParams().id || "");
   const [bookingInformation, setBookingInformation] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const inputRef = useRef(null);
   function ticketSubmitted() {
     if (!bookingTicket) {
       return;
     }
+    document.body.scrollTop = 500;
     setIsLoading(true);
-    fetch(`https://luxeclub.duckdns.org/get_ticket/${bookingTicket}`)
+    fetch(`http://localhost:3000/get_ticket/${bookingTicket}`)
       .then((res) => res.json())
       .then((data) => {
         const bit_timeout = setTimeout(() => {
@@ -35,6 +37,12 @@ export default function Tracking({ expanded, setExpanded }) {
         console.log(err);
       });
   }
+
+  useEffect(() => {
+    document.body.scrollTop = 0;
+    inputRef.current.focus();
+  }, []);
+
   return (
     <div className={styles.tracking}>
       <Header expanded={expanded} setExpanded={setExpanded} />
@@ -52,6 +60,7 @@ export default function Tracking({ expanded, setExpanded }) {
                   placeholder="P85T8CPIK7"
                   value={bookingTicket}
                   id="bookingID"
+                  ref={inputRef}
                   onChange={(e) => setBookingTicket(e.target.value)}
                 />
                 <button onClick={ticketSubmitted}>view details</button>
@@ -79,7 +88,10 @@ export default function Tracking({ expanded, setExpanded }) {
                     <br /> An Unforgettable Experience
                   </p>
                   <img
-                    src="/img/tracking_page/booking_ticket_temp.png"
+                    src={
+                      bookingInformation.url ||
+                      "/img/tracking_page/booking_ticket_temp.png"
+                    }
                     alt="booking placeholder"
                     loading="lazy"
                   />

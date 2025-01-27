@@ -77,6 +77,9 @@
     font-size: 1.5rem;
     color: #467587;
     text-transform: uppercase;
+    &:focus {
+      border: 2px solid red;
+    }
   }
   & button {
     height: 55px;
@@ -196,6 +199,9 @@
     color: #a1b1b8;
     font-size: 1.3rem;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  & img {
+    max-height: 400px;
   }
 }
 .table {

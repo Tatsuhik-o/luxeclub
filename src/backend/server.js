@@ -30,14 +30,12 @@ app.get("/get_ticket/:booking_id", (req, res) => {
 
 app.get("/get_booking/:booking_id", (req, res) => {
   const { booking_id } = req.params;
-  console.log(booking_id);
   const query = "SELECT * FROM rooms WHERE id = ?";
   dbconnection.query(query, [booking_id], (err, result) => {
     if (err) {
       console.log(err);
       res.status(500).json({ message: "Internal server error" });
     }
-    console.log(result);
     res.status(200).json(result);
   });
 });
@@ -46,18 +44,27 @@ app.post("/confirm_booking", (req, res) => {
   const booking_details = req.body.booking_id;
   const retriveQuery = "SELECT * FROM rooms WHERE id = ?";
   const insertQuery =
-    "INSERT INTO bookings (id, date, destination, departure, duration, budget, type, airline) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    "INSERT INTO bookings (id, date, destination, departure, duration, budget, type, airline, url) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
   const removeQuery = "DELETE FROM rooms WHERE id = ?";
   dbconnection.query(retriveQuery, [booking_details], (err, result) => {
     if (err) {
       console.log(err);
       res.status(500).json({ message: "Internal server error" });
     }
-    const { id, date, destination, departure, duration, price, type, airline } =
-      result[0];
+    const {
+      id,
+      date,
+      destination,
+      departure,
+      duration,
+      price,
+      type,
+      airline,
+      url,
+    } = result[0];
     dbconnection.query(
       insertQuery,
-      [id, date, destination, departure, duration, price, type, airline],
+      [id, date, destination, departure, duration, price, type, airline, url],
       (err) => {
         if (err) {
           console.log(err);
