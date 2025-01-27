@@ -21,7 +21,7 @@ export default function Tracking({ expanded, setExpanded }) {
     }
     document.body.scrollTop = 500;
     setIsLoading(true);
-    fetch(`http://localhost:3000/get_ticket/${bookingTicket}`)
+    fetch(`https://luxeclub.duckdns.org/get_ticket/${bookingTicket}`)
       .then((res) => res.json())
       .then((data) => {
         const bit_timeout = setTimeout(() => {
@@ -119,8 +119,8 @@ export default function Tracking({ expanded, setExpanded }) {
                       <h3>{bookingInformation.duration} Days</h3>
                     </div>
                     <div className={styles.row}>
-                      <h2>Budget</h2>
-                      <h3>{bookingInformation.budget}</h3>
+                      <h2>Price</h2>
+                      <h3>{bookingInformation.budget}$</h3>
                     </div>
                     <div className={styles.row}>
                       <h2>Destination</h2>

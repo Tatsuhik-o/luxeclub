@@ -82,7 +82,7 @@ export default function Planning({ expanded, setExpanded }) {
     setLoading(true);
     document.body.scrollTop = 500;
     fetch(
-      `http://localhost:3000/check_rooms?min_price=${tripInfo.minPrice}&max_price=${tripInfo.maxPrice}&destination=${tripInfo.destination}&duration=${tripInfo.duration}&type=${tripInfo.accomodation}`
+      `https://luxeclub.duckdns.org/check_rooms?min_price=${tripInfo.minPrice}&max_price=${tripInfo.maxPrice}&destination=${tripInfo.destination}&duration=${tripInfo.duration}&type=${tripInfo.accomodation}`
     )
       .then((res) => {
         return res.json();
