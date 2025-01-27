@@ -80,8 +80,9 @@ export default function Planning({ expanded, setExpanded }) {
   async function trimResults() {
     dispatch({ type: "search_results" });
     setLoading(true);
+    document.body.scrollTop = 500;
     fetch(
-      `https://luxeclub.duckdns.org/check_rooms?min_price=${tripInfo.minPrice}&max_price=${tripInfo.maxPrice}&destination=${tripInfo.destination}&duration=${tripInfo.duration}&type=${tripInfo.accomodation}`
+      `http://localhost:3000/check_rooms?min_price=${tripInfo.minPrice}&max_price=${tripInfo.maxPrice}&destination=${tripInfo.destination}&duration=${tripInfo.duration}&type=${tripInfo.accomodation}`
     )
       .then((res) => {
         return res.json();

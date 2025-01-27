@@ -17,10 +17,11 @@ export default function BookingConfirmation({ expanded, setExpanded }) {
   useEffect(() => {
     (async () => {
       const response = await fetch(
-        `https://luxeclub.duckdns.org/get_booking/${booking_id}`
+        `http://localhost:3000/get_booking/${booking_id}`
       );
       const data = await response.json();
       setBookingInformation(data[0]);
+      console.log(data[0]);
     })();
   }, []);
 
@@ -63,12 +64,12 @@ export default function BookingConfirmation({ expanded, setExpanded }) {
               </div>
               <div className={styles.lower_ticket}>
                 <div className={styles.row}>
-                  <h2>Departure</h2>
+                  <h2>Transit</h2>
                   <h3>{bookingInformation.departure}</h3>
                 </div>
                 <div className={styles.row}>
-                  <h2>Trip Time</h2>
-                  <h3>{bookingInformation.date}</h3>
+                  <h2>Flight Time</h2>
+                  <h3>{Math.floor(Math.random() * 20)} Hours</h3>
                 </div>
                 <div className={styles.row}>
                   <h2>Duration</h2>
