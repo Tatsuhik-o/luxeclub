@@ -21,7 +21,6 @@ export default function BookingConfirmation({ expanded, setExpanded }) {
       );
       const data = await response.json();
       setBookingInformation(data[0]);
-      console.log(data[0]);
     })();
   }, []);
 
