@@ -82,7 +82,7 @@ export default function Planning({ expanded, setExpanded }) {
     setLoading(true);
     document.body.scrollTop = 500;
     fetch(
-      `https://luxeclub.duckdns.org/check_rooms?min_price=${tripInfo.minPrice}&max_price=${tripInfo.maxPrice}&destination=${tripInfo.destination}&duration=${tripInfo.duration}&type=${tripInfo.accomodation}`
+      `https://luxeclub.vercel.app/api/check_rooms?min_price=${tripInfo.minPrice}&max_price=${tripInfo.maxPrice}&destination=${tripInfo.destination}&duration=${tripInfo.duration}&type=${tripInfo.accomodation}`
     )
       .then((res) => {
         return res.json();

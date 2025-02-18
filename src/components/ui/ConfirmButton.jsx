@@ -34,7 +34,7 @@ export default function CustomButton({
       body: JSON.stringify({ booking_id }),
     };
     const response = await fetch(
-      "https://luxeclub.duckdns.org/confirm_booking",
+      "https://luxeclub.vercel.app/api/confirm_booking",
       options
     );
     const data = await response.json();

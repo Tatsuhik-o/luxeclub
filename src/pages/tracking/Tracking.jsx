@@ -21,10 +21,13 @@ export default function Tracking({ expanded, setExpanded }) {
     }
     document.body.scrollTop = 500;
     setIsLoading(true);
-    fetch(`https://luxeclub.duckdns.org/get_ticket/${bookingTicket}`)
+    fetch(
+      `https://luxeclub.vercel.app/api/get_ticket?booking_id=${bookingTicket}`
+    )
       .then((res) => res.json())
       .then((data) => {
         const bit_timeout = setTimeout(() => {
+          console.log(data);
           setIsLoading(false);
           setBookingInformation(data[0]);
           setBookingTicket("");
