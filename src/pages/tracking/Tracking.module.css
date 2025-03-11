@@ -134,7 +134,7 @@
 }
 .booking_informations {
   background-color: white;
-  width: 90%;
+  width: 100%;
   height: fit-content;
   display: flex;
   border-radius: 8px;
@@ -247,6 +247,11 @@
 .row {
   display: flex;
   justify-content: space-between;
+}
+.trip_time {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 @media only screen and (max-width: 1100px) {
   .center_div {

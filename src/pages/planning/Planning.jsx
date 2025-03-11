@@ -25,6 +25,7 @@ const countries = [
   "United Kingdom",
   "France",
   "Australia",
+  "Ecuador",
   "Japan",
   "China",
   "Brazil",
@@ -76,20 +77,24 @@ export default function Planning({ expanded, setExpanded }) {
   const [loading, setLoading] = useState(false);
   const [dataToLoad, setDataToLoad] = useState([]);
   const [iterations, setIerations] = useState(8);
+  const [notFound, setNotFound] = useState(false);
 
   async function trimResults() {
     dispatch({ type: "search_results" });
     setLoading(true);
+    setNotFound(false);
     document.body.scrollTop = 500;
-    fetch(
+    const response = await fetch(
       `https://luxeclub.vercel.app/api/check_rooms?min_price=${tripInfo.minPrice}&max_price=${tripInfo.maxPrice}&destination=${tripInfo.destination}&duration=${tripInfo.duration}&type=${tripInfo.accomodation}`
-    )
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setTripResults(data);
-      });
+    );
+    if (!response.ok) {
+      setNotFound(true);
+      setLoading(false);
+      return;
+    }
+    const data = await response.json();
+    setLoading(false);
+    setTripResults(data);
   }
 
   useEffect(() => {
@@ -310,7 +315,13 @@ export default function Planning({ expanded, setExpanded }) {
           <div className={styles.loader}></div>
         </div>
       )}
-      {!loading && tripInfo.step === 2 && (
+      {notFound && (
+        <div className={styles.not_found}>
+          Unfortunately, we couldn’t find any available rooms for the selected
+          preferences.
+        </div>
+      )}
+      {!loading && !notFound && tripInfo.step === 2 && (
         <>
           <div className={styles.trip_search}>
             {dataToLoad.map((data) => {

@@ -61,6 +61,10 @@ function App() {
             />
           }
         />
+        <Route
+          path="/tracking/:id"
+          element={<Tracking expanded={expanded} setExpanded={setExpanded} />}
+        />
       </Routes>
     </BrowserRouter>
   );

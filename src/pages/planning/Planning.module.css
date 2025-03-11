@@ -330,7 +330,7 @@ select {
   }
 }
 .mosq_img {
-  background-image: url("/public//img/planning_page/bg_mosq_tower.webp");
+  background-image: url("/img/planning_page/bg_mosq_tower.webp");
   background-size: cover;
   background-position: center center;
 }
@@ -339,6 +339,16 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.not_found {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-style: italic;
+  text-transform: capitalize;
+  transform: translateY(-100px);
+  align-self: center;
 }
 @media only screen and (max-width: 1700px) {
   .planning_first_form {

@@ -5,7 +5,6 @@ dotenv.config();
 
 export async function getDBConnection() {
   try {
-    console.log("Connecting to DB...");
     const connection = await mysql.createConnection({
       host: process.env.DB_HOST,
       user: process.env.DB_USERNAME,
@@ -13,7 +12,6 @@ export async function getDBConnection() {
       database: process.env.DB_NAME,
       port: process.env.PORT,
     });
-    console.log("DB Connection Success!");
     return connection;
   } catch (error) {
     console.error("DB Connection Error:", error);

@@ -38,10 +38,12 @@ export default async function handler(req, res) {
       airline,
       url,
     ]);
-    console.log(insertQueryResults);
-    const [removeResultsQuery] = await db.execute(removeQuery, [
-      booking_details,
-    ]);
+    if (insertQueryResults) {
+      const [removeResultsQuery] = await db.execute(removeQuery, [
+        booking_details,
+      ]);
+      console.log(removeResultsQuery);
+    }
 
     await db.end();
 

@@ -15,6 +15,7 @@ export default function Tracking({ expanded, setExpanded }) {
   const [bookingInformation, setBookingInformation] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const inputRef = useRef(null);
+  const confirmed = useParams() || "";
   function ticketSubmitted() {
     if (!bookingTicket) {
       return;
@@ -27,7 +28,6 @@ export default function Tracking({ expanded, setExpanded }) {
       .then((res) => res.json())
       .then((data) => {
         const bit_timeout = setTimeout(() => {
-          console.log(data);
           setIsLoading(false);
           setBookingInformation(data[0]);
           setBookingTicket("");
@@ -55,7 +55,9 @@ export default function Tracking({ expanded, setExpanded }) {
             <h2>Stay updated on your travel plans</h2>
             <div className={styles.ticket_details}>
               <label htmlFor="bookingID">
-                Enter your trip id to view all the details.
+                {confirmed.id
+                  ? `booking confirmed`
+                  : "Enter your trip id to view all the details."}
               </label>
               <div className={styles.submit_area}>
                 <input
@@ -74,7 +76,7 @@ export default function Tracking({ expanded, setExpanded }) {
         <div className={styles.booking_details}>
           {!isLoading && !bookingInformation && (
             <div className={styles.fill_in}>
-              please fill in your booking details :
+              please fill in your booking details and hit view details :
             </div>
           )}
           {isLoading && <div className={styles.loader}></div>}
@@ -110,12 +112,14 @@ export default function Tracking({ expanded, setExpanded }) {
                   </div>
                   <div className={styles.lower_ticket}>
                     <div className={styles.row}>
-                      <h2>Departure</h2>
+                      <h2>Transit</h2>
                       <h3>{bookingInformation.departure}</h3>
                     </div>
                     <div className={styles.row}>
-                      <h2>Trip Time</h2>
-                      <h3>{bookingInformation.date}</h3>
+                      <h2>Time</h2>
+                      <h3 className={styles.trip_time}>
+                        {bookingInformation.date}
+                      </h3>
                     </div>
                     <div className={styles.row}>
                       <h2>Duration</h2>

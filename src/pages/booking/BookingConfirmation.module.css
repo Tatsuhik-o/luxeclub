@@ -130,6 +130,8 @@
   display: flex;
   border-radius: 8px;
   overflow: hidden;
+  align-self: center;
+  margin: 1rem;
 }
 .ticket_glimpse {
   width: 45%;
@@ -276,7 +278,6 @@
   .booking_informations {
     flex-direction: column;
     width: 95%;
-    margin: 0;
     height: 90%;
   }
   .ticket_glimpse {

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import styles from "./BookingConfirmation.module.css";
 import { useParams } from "react-router-dom";
@@ -76,7 +76,7 @@ export default function BookingConfirmation({ expanded, setExpanded }) {
                 </div>
                 <div className={styles.row}>
                   <h2>Budget</h2>
-                  <h3>{bookingInformation.budget}</h3>
+                  <h3>{bookingInformation.budget || "1500$"}</h3>
                 </div>
                 <div className={styles.row}>
                   <h2>Destination</h2>

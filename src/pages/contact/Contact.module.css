@@ -58,6 +58,7 @@
     font-size: 1.2rem;
     font-weight: 400;
     font-family: "Roboto";
+    width: 100%;
   }
   & label {
     font-style: italic;
@@ -85,7 +86,9 @@
     font-weight: 400;
     font-family: "Roboto";
     min-width: 100%;
+    max-width: 100%;
     min-height: 150px;
+    max-height: 300px;
   }
 }
 .send_btn {
