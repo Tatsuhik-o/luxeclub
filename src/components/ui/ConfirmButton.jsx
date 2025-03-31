@@ -34,7 +34,7 @@ export default function CustomButton({
       body: JSON.stringify({ booking_id }),
     };
     const response = await fetch(
-      "https://luxeclub.vercel.app/api/confirm_booking",
+      "http://localhost:3000/api/confirm_booking",
       options
     );
     const data = await response.json();

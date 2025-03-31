@@ -17,7 +17,7 @@ export default function BookingConfirmation({ expanded, setExpanded }) {
   useEffect(() => {
     (async () => {
       const response = await fetch(
-        `https://luxeclub.vercel.app/api/get_booking?booking_id=${booking_id}`
+        `http://localhost:3000/api/get_booking?booking_id=${booking_id}`
       );
       const data = await response.json();
       setBookingInformation(data[0]);

@@ -85,7 +85,7 @@ export default function Planning({ expanded, setExpanded }) {
     setNotFound(false);
     document.body.scrollTop = 500;
     const response = await fetch(
-      `https://luxeclub.vercel.app/api/check_rooms?min_price=${tripInfo.minPrice}&max_price=${tripInfo.maxPrice}&destination=${tripInfo.destination}&duration=${tripInfo.duration}&type=${tripInfo.accomodation}`
+      `http://localhost:3000/api/check_rooms?min_price=${tripInfo.minPrice}&max_price=${tripInfo.maxPrice}&destination=${tripInfo.destination}&duration=${tripInfo.duration}&type=${tripInfo.accomodation}`
     );
     if (!response.ok) {
       setNotFound(true);

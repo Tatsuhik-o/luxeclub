@@ -22,9 +22,7 @@ export default function Tracking({ expanded, setExpanded }) {
     }
     document.body.scrollTop = 500;
     setIsLoading(true);
-    fetch(
-      `https://luxeclub.vercel.app/api/get_ticket?booking_id=${bookingTicket}`
-    )
+    fetch(`http://localhost:3000/api/get_ticket?booking_id=${bookingTicket}`)
       .then((res) => res.json())
       .then((data) => {
         const bit_timeout = setTimeout(() => {
