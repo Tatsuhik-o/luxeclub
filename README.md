@@ -1,6 +1,6 @@
 # Luxe Club – Exclusive Deals on Luxury Experiences
 
-[![Luxe Club Banner](https://i.imgur.com/G7uwyOX.png)]([https://luxeclub.vercel.app/banner.jpg](https://luxeclub.vercel.app/))
+[![Luxe Club Banner](https://i.imgur.com/G7uwyOX.png)](https://luxeclub.vercel.app/)
 
 ## Overview
 
