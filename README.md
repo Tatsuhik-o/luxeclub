@@ -13,10 +13,10 @@
 
 ## Why Luxe Club?
 
-- **Curated Excellence**: Hand-selected luxury items and experiences representing top-tier quality :contentReference[oaicite:2]{index=2}  
-- **Unbeatable Value**: Premium offers at prices that challenge industry standards :contentReference[oaicite:3]{index=3}  
-- **Trusted Partnerships**: Direct collaboration with premium brands for authenticity and price integrity :contentReference[oaicite:4]{index=4}  
-- **Fair & Transparent**: Transparent winner selection process with fair, random methods :contentReference[oaicite:5]{index=5}
+- **Curated Excellence**: Hand-selected luxury items and experiences representing top-tier quality 
+- **Unbeatable Value**: Premium offers at prices that challenge industry standards 
+- **Trusted Partnerships**: Direct collaboration with premium brands for authenticity and price integrity 
+- **Fair & Transparent**: Transparent winner selection process with fair, random methods
 
 ---
 
@@ -25,7 +25,7 @@
 - **Exclusive Deal Previews**: Early access to monthly premium offers  
 - **Flexible Entries**: Choose between 3, 9, or 15 entries per deal  
 - **Personalized Dashboard**: Track your deals, entries, history, and payment methods  
-- **Secure Payments**: Handled via **Stripe** for peace of mind :contentReference[oaicite:6]{index=6}
+- **Secure Payments**: Handled via **Stripe** for peace of mind 
 
 ---
 
